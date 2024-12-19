@@ -26,25 +26,29 @@ const ExperiencesList = () => {
     <div>
       <h1>Immersive Experiences List</h1>
       <ul>
-        {experiences.map((experience) => (
-          <li key={experience._id}>
-            <h2>{experience.title}</h2>
-            <p>{experience.description}</p>
-            <p>
-              <strong>Location:</strong>
-              {experience.location || "No location provided"}
-            </p>
-            <p>
-              <strong>Date:</strong>
-              {typeof experience.date === "string"
-                ? experience.date
-                : new Date(experience.date).toLocaleDateString()}
-            </p>
-            {experience.imageUrl && (
-              <img src={experience.imageUrl} alt={experience.title} />
-            )}
-          </li>
-        ))}
+        {experiences ? (
+          experiences.map((experience) => (
+            <li key={experience._id}>
+              <h2>{experience.title}</h2>
+              <p>{experience.description}</p>
+              <p>
+                <strong>Location:</strong>
+                {experience.location || "No location provided"}
+              </p>
+              <p>
+                <strong>Date:</strong>
+                {typeof experience.date === "string"
+                  ? experience.date
+                  : new Date(experience.date).toLocaleDateString()}
+              </p>
+              {experience.imageUrl && (
+                <img src={experience.imageUrl} alt={experience.title} />
+              )}
+            </li>
+          ))
+        ) : (
+          <li>No experiences found</li>
+        )}
       </ul>
     </div>
   );
