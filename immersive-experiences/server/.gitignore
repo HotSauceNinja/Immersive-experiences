@@ -1,0 +1,12 @@
+node_modules
+dist
+dist-ssr
+build/
+coverage/
+.env
+*.log
+.DS_Store
+._*
+.vscode/
+tmp/
+temp/
