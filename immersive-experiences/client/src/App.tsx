@@ -1,10 +1,15 @@
 import "./App.css";
+import Hero from "./components/Hero";
+import HomeCards from "./components/HomeCards";
+import Navbar from "./components/Navbar";
 import ExperiencesList from "./ExperiencesList";
 
 const App = () => {
   return (
     <>
-      <div className="app">Researching Immersive Experiences Worldwide</div>
+      <Navbar />
+      <Hero subtitle="Researching Immersive Experiences Worldwide" />
+      <HomeCards />
       <ExperiencesList />
     </>
   );
