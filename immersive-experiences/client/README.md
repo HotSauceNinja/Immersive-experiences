@@ -1,5 +1,31 @@
 # React + TypeScript + Vite
 
+# To run:
+
+1. Start the Backend Server:
+
+```
+  cd immersive-experiences/server
+  node server.js
+```
+
+2. Seed the Database:
+
+```
+  node seed.js
+```
+
+3. Start Frontend:
+
+```
+  npm run dev
+```
+
+4. Access:
+   Open your browser and navigate to the http://localhost:3001 (using Vite with the port set to 3001).
+
+# About Vite & template used:
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
@@ -48,3 +74,5 @@ export default tseslint.config({
   },
 });
 ```
+
+---
