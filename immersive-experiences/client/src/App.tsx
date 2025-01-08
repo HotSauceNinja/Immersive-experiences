@@ -1,16 +1,27 @@
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
 import "./App.css";
-import ExperiencesList from "./components/ExperiencesList";
-import Hero from "./components/Hero";
-import HomeCards from "./components/HomeCards";
-import Navbar from "./components/Navbar";
+import MainLayout from "./layouts/MainLayout";
+import ExperiencesPage from "./pages/ExperiencesPage";
+import HomePage from "./pages/HomePage";
+
+const router = createBrowserRouter(
+  createRoutesFromElements([
+    <Route path="/" element={<MainLayout />}>
+      <Route index element={<HomePage />} />,
+      <Route path="/experiences" element={<ExperiencesPage />} />,
+    </Route>,
+  ])
+);
 
 const App = () => {
   return (
     <>
-      <Navbar />
-      <Hero subtitle="Researching Immersive Experiences Worldwide" />
-      <HomeCards />
-      <ExperiencesList />
+      <RouterProvider router={router} />;
     </>
   );
 };

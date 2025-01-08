@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../assets/images/logo_magicstudio.jpg";
 
 const Navbar = () => {
@@ -12,7 +13,7 @@ const Navbar = () => {
         alignItems: "baseline",
       }}
     >
-      <a href="/">
+      <Link to="/">
         <div
           className="logo"
           style={{
@@ -24,23 +25,23 @@ const Navbar = () => {
           <img
             src={logo}
             alt="immersive experiences logo"
-            style={{ width: "200px", height: "auto" }}
+            style={{ width: "200px" }}
           />
           <h1>Immersive Experiences</h1>
         </div>
-      </a>
+      </Link>
 
       <div className="links">
-        <a
+        <Link
           className="nav-link"
           style={{ marginRight: "20px" }}
-          href="/experiences"
+          to="/experiences"
         >
           All Experiences
-        </a>
-        <a className="nav-link" style={{ marginRight: "20px" }} href="/create">
+        </Link>
+        <Link className="nav-link" style={{ marginRight: "20px" }} to="/create">
           Add Experience
-        </a>
+        </Link>
       </div>
     </nav>
   );

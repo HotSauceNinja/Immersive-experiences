@@ -24,6 +24,11 @@
 4. Access:
    Open your browser and navigate to the http://localhost:3001 (using Vite with the port set to 3001).
 
+# Packages Used:
+
+- React Icons
+- React Router Dom
+
 # About Vite & template used:
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

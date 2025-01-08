@@ -10,6 +10,7 @@ export interface Experience {
   export interface CardProps {
     name: string;
     description: string;
+    href?: string;
     background?: string;
     textColor?: string;
   }
