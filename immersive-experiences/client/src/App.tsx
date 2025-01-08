@@ -1,8 +1,8 @@
 import "./App.css";
+import ExperiencesList from "./components/ExperiencesList";
 import Hero from "./components/Hero";
 import HomeCards from "./components/HomeCards";
 import Navbar from "./components/Navbar";
-import ExperiencesList from "./ExperiencesList";
 
 const App = () => {
   return (

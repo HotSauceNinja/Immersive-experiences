@@ -1,9 +1,4 @@
-interface CardProps {
-  name: string;
-  description: string;
-  background?: string;
-  textColor?: string;
-}
+import { CardProps } from "../types";
 
 const Card = ({ name, description, background = "teal" }: CardProps) => {
   return (

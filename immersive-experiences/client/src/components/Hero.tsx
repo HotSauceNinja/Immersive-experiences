@@ -1,7 +1,4 @@
-interface HeroProps {
-  title?: string;
-  subtitle?: string;
-}
+import { HeroProps } from "../types";
 
 const Hero = ({ title = "Welcome!", subtitle }: HeroProps) => {
   return (
