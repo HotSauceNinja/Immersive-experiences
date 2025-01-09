@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import "./App.css";
 import MainLayout from "./layouts/MainLayout";
+import ExperiencePage from "./pages/ExperiencePage";
 import ExperiencesPage from "./pages/ExperiencesPage";
 import HomePage from "./pages/HomePage";
 import NotFoundPage from "./pages/NotFoundPage";
@@ -15,6 +16,7 @@ const router = createBrowserRouter(
     <Route path="/" element={<MainLayout />}>
       <Route index element={<HomePage />} />,
       <Route path="/experiences" element={<ExperiencesPage />} />,
+      <Route path="/experiences/:id" element={<ExperiencePage />} />,
       <Route path="*" element={<NotFoundPage />} />,
     </Route>,
   ])
@@ -23,7 +25,7 @@ const router = createBrowserRouter(
 const App = () => {
   return (
     <>
-      <RouterProvider router={router} />;
+      <RouterProvider router={router} />
     </>
   );
 };
