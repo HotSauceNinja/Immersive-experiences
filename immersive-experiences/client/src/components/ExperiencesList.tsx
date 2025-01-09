@@ -15,7 +15,7 @@ const ExperiencesList = () => {
       setLoading(true);
       setError(null);
       try {
-        const response = await axios.get("http://localhost:5000/experiences");
+        const response = await axios.get("/api/experiences");
         setExperiences(response.data);
       } catch (error) {
         if (axios.isAxiosError(error)) {
