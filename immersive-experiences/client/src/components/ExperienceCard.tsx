@@ -14,26 +14,31 @@ const ExperienceCard = ({ experience }: { experience: Experience }) => {
     <li key={experience._id}>
       <Link to={`/experiences/${experience._id}`}>
         <h2>{experience.title}</h2>
-        <p>{description}</p>
-        <button onClick={() => setShowDetails((showDetails) => !showDetails)}>
-          {showDetails ? "Show less" : "Show more"}
-        </button>
-        <p>
-          <FaMapPin />
-          <strong> Location: </strong>
-          {experience.location || "No location provided"}
-        </p>
-        <p>
-          <FaCalendarAlt />
-          <strong> Date: </strong>
-          {typeof experience.date === "string"
-            ? experience.date
-            : new Date(experience.date).toLocaleDateString()}
-        </p>
-        {experience.imageUrl && (
-          <img src={experience.imageUrl} alt={experience.title} />
-        )}
       </Link>
+      <p>{description}</p>
+      {showDetails && (
+        <>
+          <p>
+            <FaMapPin />
+            <strong> Location: </strong>
+            {experience.location || "No location provided"}
+          </p>
+          <p>
+            <FaCalendarAlt />
+            <strong> Date: </strong>
+            {typeof experience.date === "string"
+              ? experience.date
+              : new Date(experience.date).toLocaleDateString()}
+          </p>
+          {experience.imageUrl && (
+            <img src={experience.imageUrl} alt={experience.title} />
+          )}
+        </>
+      )}
+      <br />
+      <button onClick={() => setShowDetails((showDetails) => !showDetails)}>
+        {showDetails ? "Show less" : "Show more"}
+      </button>
     </li>
   );
 };
