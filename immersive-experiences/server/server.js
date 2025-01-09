@@ -26,9 +26,22 @@ app.get('/experiences', async (req, res) => {
     const experiences = await Experience.find();
     res.status(200).json(experiences);
   } catch (err) {
-    res.status(400).send(err);
+    res.status(400).send({ error: err.message });
   }
 });
+
+  // Get one experience
+  app.get('/experiences/:id', async (req, res) => {
+    try {
+      const experience = await Experience.findById(req.params.id);
+      if (!experience) {
+        return res.status(404).send({ error: 'Experience not found' });
+      }
+      res.status(200).json(experience);
+    } catch (err) {
+      res.status(400).send(err);
+    }
+  });
 
 // Create an experience
 app.post('/experiences', async (req, res) => {
