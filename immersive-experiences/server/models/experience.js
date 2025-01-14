@@ -5,7 +5,7 @@ const experienceSchema = new mongoose.Schema({
   title: { type: String, required: true },
   description: { type: String, required: true },
   location: String,
-  date: String,
+  date: { type: String, required: true },
   imageUrl: String
 });
 
